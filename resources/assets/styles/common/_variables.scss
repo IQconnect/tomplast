@@ -1,0 +1,37 @@
+/** Import Bootstrap functions */
+@import "~bootstrap/scss/functions";
+
+// COLORS
+$light: #fff;
+$dark: #464646;
+$black: #000;
+$special: #be2424;
+$special-dark: #36454f;
+$special-light: #e1c385;
+$gray: #a7a7a7;
+
+// END COLORS
+
+$media: (
+  xs: 576px,
+  sm: 768px,
+  md: 992px,
+  lg: 1280px,
+  xl: 1440px
+);
+
+$transition: 0.4s;
+
+$font-family: (
+  main: "Open Sans",
+  special: "Berkshire Swash",
+  quote: "Palanquin Dark"
+);
+
+$gutter: 10px;
+$gutter_num: 10;
+
+$z-index: (
+  header: 100,
+  preloader: 300
+);

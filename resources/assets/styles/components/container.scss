@@ -1,0 +1,9 @@
+.container {
+  @include cssLock("padding-left", 360, 1920, (gutter_num(3), gutter_num(14)));
+  @include cssLock("padding-right", 360, 1920, (gutter_num(3), gutter_num(14)));
+
+  position: relative;
+  width: 100%;
+  padding-top: 0;
+  padding-bottom: 0;
+}

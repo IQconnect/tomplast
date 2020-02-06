@@ -1,0 +1,88 @@
+%text {
+  font-weight: 400;
+  margin: 0;
+}
+
+%special {
+  font-family: map-get($font-family, "special"), cursive;
+}
+
+.menu-link {
+  @extend %text;
+
+  @include cssLock("font-size", 360, 1920, (gutter_num(1), gutter_num(2)));
+
+  @include mediaTo(sm) {
+    font-size: gutter(2);
+  }
+}
+
+.extra-title {
+  @extend %special;
+  @extend %text;
+
+  @include cssLock("font-size", 360, 1920, (gutter_num(3), gutter_num(10.4)));
+}
+
+.title {
+  @extend %special;
+  @extend %text;
+
+  @include cssLock("font-size", 360, 1920, (gutter_num(2.4), gutter_num(5.2)));
+}
+
+.subtitle {
+  @extend %text;
+
+  @include cssLock("font-size", 360, 1920, (gutter_num(1.6), gutter_num(2.4)));
+
+  font-weight: 600;
+  line-height: gutter(2);
+}
+
+.text {
+  @extend %text;
+
+  @include cssLock("font-size", 360, 1920, (gutter_num(1.4), gutter_num(2.4)));
+}
+
+.major-text {
+  @extend %text;
+
+  @include cssLock("font-size", 360, 1920, (gutter_num(2), gutter_num(3)));
+}
+
+.minor-text {
+  @extend %text;
+
+  @include cssLock("font-size", 360, 1920, (gutter_num(1.2), gutter_num(1.6)));
+}
+
+blockquote,
+.blockquote {
+  @extend %text;
+  @extend %special;
+
+  @include cssLock("font-size", 360, 1920, (gutter_num(1.4), gutter_num(2.4)));
+
+  color: $special-dark;
+  font-style: italic;
+  position: relative;
+  z-index: 1;
+  pointer-events: none;
+
+  &::before {
+    @extend %pseudo;
+
+    content: '"';
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: gutter(38);
+    top: gutter(14);
+    left: gutter(-12);
+    color: rgba($gray, 0.2);
+    z-index: -1;
+    font-family: map-get($font-family, "quote"), sans-serif;
+  }
+}
