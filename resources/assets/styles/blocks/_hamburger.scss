@@ -1,0 +1,42 @@
+.hamburger {
+  $root: &;
+
+  background: rgba($light, 0.4);
+  position: relative;
+  width: gutter(4);
+  height: gutter(4);
+  border: 0;
+  cursor: pointer;
+  z-index: 20;
+
+  &__line {
+    @extend %absolute;
+
+    width: 60%;
+    height: gutter(0.4);
+    background-color: $dark;
+    transition: $transition;
+
+    &:first-child {
+      transform: translateY(gutter(-0.8));
+    }
+
+    &:last-child {
+      transform: translateY(gutter(0.8));
+    }
+  }
+
+  &:hover {
+    #{$root}__line {
+      transform: scale(1.1);
+
+      &:first-child {
+        transform: translateY(gutter(-0.9)) scale(1.1);
+      }
+
+      &:last-child {
+        transform: translateY(gutter(0.9)) scale(1.1);
+      }
+    }
+  }
+}

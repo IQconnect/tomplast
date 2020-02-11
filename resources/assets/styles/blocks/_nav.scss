@@ -1,0 +1,26 @@
+.nav {
+  width: gutter(4);
+  height: gutter(4);
+  background: $light;
+  z-index: 10;
+  overflow: hidden;
+  transition: $transition ease-in;
+  opacity: 0;
+
+  .menu {
+    padding: 0;
+    margin: 0;
+    list-style: none;
+    opacity: 0;
+  }
+
+  &.-is-active {
+    width: 100%;
+    height: calc(100vh - #{gutter(8)});
+    opacity: 1;
+
+    .menu {
+      opacity: 1;
+    }
+  }
+}

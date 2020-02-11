@@ -8,6 +8,7 @@ body {
   overflow-x: initial;
   margin: 0 !important;
   padding: 0;
+  background-color: $dark;
 }
 
 #wpadminbar {
@@ -35,6 +36,13 @@ xmp {
 a {
   color: inherit;
   text-decoration: inherit;
+  outline: rgba($special, 0) solid gutter(0.1);
+  transition: $transition;
+
+  &:focus {
+    outline: rgba($special, 0.6) solid gutter(0.1);
+    outline-offset: gutter(1);
+  }
 }
 
 .fancybox-slide {
@@ -43,4 +51,13 @@ a {
 
 .wrap {
   overflow: hidden;
+}
+
+button {
+  outline: rgba($special, 0) solid gutter(0.1);
+  transition: $transition;
+
+  &:focus {
+    outline: rgba($special, 0.6) solid gutter(0.1);
+  }
 }

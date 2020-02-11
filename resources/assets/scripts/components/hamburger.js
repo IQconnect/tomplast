@@ -1,6 +1,6 @@
 const CONFIG = {
   TRIGGER: '[data-toggle-menu]',
-  ELEM: '[header]',
+  ELEM: '[data-menu]',
   CLASS: '-is-active',
 };
 

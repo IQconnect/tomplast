@@ -43,7 +43,7 @@
 .text {
   @extend %text;
 
-  @include cssLock("font-size", 360, 1920, (gutter_num(1.4), gutter_num(2.4)));
+  @include cssLock("font-size", 360, 1920, (gutter_num(1.4), gutter_num(1.8)));
 }
 
 .major-text {

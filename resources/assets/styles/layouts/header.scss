@@ -1,0 +1,23 @@
+.header {
+  padding: gutter(4) 0;
+
+  &__wrapper {
+    position: relative;
+    display: flex;
+    justify-content: space-between;
+  }
+
+  &__extras {
+    display: grid;
+    grid-template-columns: auto auto;
+    gap: gutter(0.8);
+  }
+
+  &__nav {
+    @extend %absolute;
+
+    z-index: 10;
+    left: unset;
+    bottom: unset;
+  }
+}

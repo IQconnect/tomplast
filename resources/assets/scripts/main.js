@@ -11,7 +11,7 @@ import './autoload/**/*';
 // import aboutUs from './routes/about';
 // import AOS from 'aos';
 
-//import slider from './components/slider';
+import hamburger from './components/hamburger';
 
 
 /** Populate Router instance with DOM routes */
@@ -27,4 +27,5 @@ import './autoload/**/*';
 // Load Events
 jQuery(document).ready(() => {
   console.log('READY');
+  hamburger.init();
 });

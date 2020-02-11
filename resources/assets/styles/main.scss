@@ -34,9 +34,11 @@
 @import "components/button";
 
 /** Blocks */
-// @import "blocks/menu";
+@import "blocks/hamburger";
+@import "blocks/lg-pick";
+@import "blocks/nav";
 
 /** Layouts */
-// @import "layouts/header";
+@import "layouts/header";
 
 /** Pages */
