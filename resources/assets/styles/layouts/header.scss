@@ -14,6 +14,18 @@
   &__brand {
     margin: 0;
     padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: gutter(4);
+
+    img {
+      max-width: 100%;
+    }
+
+    @include mediaTo(md) {
+      width: gutter(16);
+    }
   }
 
   &__extras {

@@ -52,6 +52,10 @@
     display: flex;
     justify-content: flex-end;
     align-items: center;
+
+    @include mediaTo(md) {
+      display: none;
+    }
   }
 
   &__btn {
