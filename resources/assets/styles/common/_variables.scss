@@ -22,10 +22,13 @@ $media: (
 
 $transition: 0.4s;
 
+// font-family: 'Anton', sans-serif;
+// font-family: 'Lato', sans-serif;
+
 $font-family: (
-  main: "Roboto",
-  special: "Roboto",
-  quote: "Roboto"
+  main: "Lato",
+  special: "Anton",
+  quote: "Lato"
 );
 
 $gutter: 10px;

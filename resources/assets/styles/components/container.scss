@@ -1,14 +1,30 @@
 .container {
-  @include cssLock("padding-left", 360, 1920, (gutter_num(3), gutter_num(14)));
-  @include cssLock("padding-right", 360, 1920, (gutter_num(3), gutter_num(14)));
-
   position: relative;
-  width: 100%;
   padding-top: 0;
   padding-bottom: 0;
+  width: gutter(144);
+  max-width: 100%;
+
+  @include mediaTo(xl) {
+    @include cssLock("padding-left", 360, 1920, (gutter_num(3), gutter_num(6)));
+    @include cssLock(
+      "padding-right",
+      360,
+      1920,
+      (gutter_num(3), gutter_num(6))
+    );
+  }
 
   &--fluid {
     @include cssLock("padding-left", 360, 1920, (gutter_num(3), gutter_num(6)));
-    @include cssLock("padding-right", 360, 1920, (gutter_num(3), gutter_num(6)));
+    @include cssLock(
+      "padding-right",
+      360,
+      1920,
+      (gutter_num(3), gutter_num(6))
+    );
+
+    width: 100%;
+    max-width: 100%;
   }
 }

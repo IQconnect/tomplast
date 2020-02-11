@@ -8,19 +8,5 @@
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/fancyapps/fancybox@3.5.6/dist/jquery.fancybox.min.css" />
   <script src="https://cdn.jsdelivr.net/gh/fancyapps/fancybox@3.5.6/dist/jquery.fancybox.min.js"></script>
 
-  <script>
-    setTimeout(function(){ 
-      window.dispatchEvent(new Event('resize'));
-    }, 1000);
-
-    setTimeout(function(){ 
-      window.dispatchEvent(new Event('resize'));
-    }, 3000);
-
-    setTimeout(function(){ 
-      window.dispatchEvent(new Event('resize'));
-    }, 5000);
-  </script>
-
   @php wp_head() @endphp
 </head>

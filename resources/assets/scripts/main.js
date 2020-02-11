@@ -12,6 +12,7 @@ import './autoload/**/*';
 // import AOS from 'aos';
 
 import hamburger from './components/hamburger';
+import hero from './components/hero';
 
 
 /** Populate Router instance with DOM routes */
@@ -25,7 +26,11 @@ import hamburger from './components/hamburger';
 // });
 
 // Load Events
-jQuery(document).ready(() => {
+$(document).ready(function() {
   console.log('READY');
   hamburger.init();
+  hero.init();
+  hero.resize();
+  console.log('resize');
+  window.dispatchEvent(new Event('resize'));
 });

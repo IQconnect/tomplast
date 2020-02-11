@@ -1,18 +1,48 @@
-const Parallax = require('parallax-js')
+var Flickity = require('flickity');
 
 const CONFIG = {
-    ELEM: '[hero]',
-}
+    ELEM: '.hero',
+    CELL: '.hero__cell',
+};
 
-const { ELEM } = CONFIG;
-
-const hero = {
+const Hero = {
     init() {
-        this.elem = document.querySelector(ELEM);
-        if(this.elem) {
-            new Parallax(this.elem);
+        const { ELEM } = CONFIG;
+        this.elem = document.querySelectorAll(ELEM);
+        this.sliders = [];
+        if (this.elem) {
+            this.createSlider();
+            this.resize();
         }
     },
-}
 
-export default hero;
+    createSlider() {
+        const { CELL } = CONFIG;
+
+        this.elem.forEach(element => {
+            console.log(element);
+            const slider = new Flickity(element, {
+                pageDots: false,
+                prevNextButtons: false,
+                cellSelector: CELL,
+                autoPlay: false,
+                wrapAround: true,
+            });
+            
+            console.log(slider);
+            this.sliders.push(slider);
+        });
+    },
+
+    resize() {
+        console.log('resize INIT', this.sliders);
+        if(this.sliders) {
+            this.sliders.forEach(element => {
+                console.log('resize');
+                element.resize();
+            });
+        }
+    },
+};
+
+export default Hero;

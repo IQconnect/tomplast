@@ -9,7 +9,9 @@
   <div class="container container--fluid">
     <div class="header__wrapper">
       <a class="header__brand-wrapper" href="{{ home_url('/') }}">
-        <img class="header__brand" src="{{  get_field('logo', 'options')['url'] }}" alt="Tomplast">
+        <h1 class="header__brand">
+          <img src="{{  get_field('logo', 'options')['url'] }}" alt="Tomplast">
+        </h1>
       </a>
       <div class="header__extras">
         @include('blocks.lg-pick')
