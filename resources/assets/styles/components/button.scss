@@ -6,15 +6,37 @@
   color: $light;
   border: gutter(0.2) solid transparent;
   cursor: pointer;
-  transition: $transition;
+  transition: $transition ease-in;
   display: inline-block;
   font-weight: 700;
   text-transform: uppercase;
   letter-spacing: gutter(0.4);
   background-color: $special;
 
+  &::before {
+    @extend %absolute;
+
+    content: url("images/arrow.svg");
+    right: unset;
+    left: gutter(0.2);
+    top: gutter(0.2);
+    display: flex;
+    justify-self: center;
+    align-items: center;
+    transform: scale(0.8);
+    opacity: 0;
+    transition: $transition ease-in;
+  }
+
   &:hover {
     background-color: $special-dark;
     color: $light;
+    padding-left: gutter(3.8);
+    padding-right: gutter(2.6);
+
+    &::before {
+      opacity: 1;
+      left: gutter(0.8);
+    }
   }
 }

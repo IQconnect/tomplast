@@ -9,7 +9,7 @@
   color: $light;
   fill: $light;
   overflow: hidden;
-  transition: $transition / 1.5 ease-in;
+  transition: $transition ease-in;
   display: flex;
   flex-direction: column;
 
@@ -17,11 +17,11 @@
     opacity: 0;
     height: gutter(4);
     border-top: 1px solid;
-    transition: $transition;
+    transition: $transition ease-in;
 
     svg {
       margin-left: gutter(0.8);
-      transition: $transition;
+      transition: $transition ease-in;
       fill: $light;
     }
 

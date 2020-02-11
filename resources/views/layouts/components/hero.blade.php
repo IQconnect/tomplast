@@ -36,6 +36,15 @@
         </div>
     </div>  
     @endforeach
+    <ul class="hero__nav">
+        @foreach ($hero as $item)
+        <li class="hero__items">
+            <button class="hero__btn" data-index="{{ $loop->index }}">
+                {{ $item['content']['name'] }} @include('svg.arrow-round')
+            </button>
+        </li>
+        @endforeach
+    </ul>
 </section>
 
 @endif

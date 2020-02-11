@@ -1,4 +1,6 @@
 .hero {
+  $root: &;
+
   height: 100vh;
   width: 100vw;
 
@@ -36,6 +38,68 @@
 
   &__cell {
     @extend %overlay;
+  }
+
+  &__nav {
+    @extend %absolute;
+
+    top: unset;
+    left: unset;
+    z-index: 10;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+  }
+
+  &__btn {
+    @extend .subtitle;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: gutter(3.2) gutter(3.2);
+    margin-left: gutter(1);
+    cursor: pointer;
+    border: 0;
+    text-transform: uppercase;
+    color: $gray;
+    transition: $transition ease-in;
+    font-weight: 400;
+
+    svg {
+      margin-left: gutter(1);
+      transition: $transition / 2 ease-in;
+    }
+
+    &:hover {
+      background-color: $dark;
+      color: $light;
+
+      svg {
+        filter: brightness(0) invert(1);
+      }
+    }
+
+    &.-is-active {
+      background-color: $special;
+      color: $light;
+
+      svg {
+        filter: brightness(0) invert(1);
+      }
+    }
+  }
+
+  &__items {
+    &:first-child {
+      #{$root}__btn {
+        padding-left: gutter(6.4);
+        clip-path: polygon(30% 0%, 100% 0, 100% 100%, 0% 100%);
+      }
+    }
   }
 
   .flickity-slider {

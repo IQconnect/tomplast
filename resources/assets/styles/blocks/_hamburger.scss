@@ -15,7 +15,7 @@
     width: 60%;
     height: gutter(0.4);
     background-color: $dark;
-    transition: $transition;
+    transition: $transition ease-in;
 
     &:first-child {
       transform: translateY(gutter(-0.8));

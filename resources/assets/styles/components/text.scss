@@ -27,9 +27,10 @@
 }
 
 .subtitle {
+  @extend %special;
   @extend %text;
 
-  @include cssLock("font-size", 360, 1920, (gutter_num(1.6), gutter_num(2.4)));
+  @include cssLock("font-size", 360, 1920, (gutter_num(2.4), gutter_num(4.2)));
 
   font-weight: 600;
   line-height: gutter(2);
