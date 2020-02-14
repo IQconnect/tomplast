@@ -16,7 +16,7 @@
   &::before {
     @extend %absolute;
 
-    content: url("images/arrow.svg");
+    content: url("../images/arrow.svg");
     right: unset;
     left: gutter(0.2);
     top: gutter(0.2);
@@ -37,6 +37,26 @@
     &::before {
       opacity: 1;
       left: gutter(0.8);
+    }
+  }
+
+  &--transparent {
+    background: transparent;
+    margin-left: gutter(-3);
+    color: $special;
+    font-weight: 900;
+
+    &:hover {
+      background: transparent;
+      color: $special;
+      padding-left: gutter(3.8);
+      padding-right: gutter(2.6);
+    }
+  }
+
+  &--red {
+    &::before {
+      content: url("../images/arrow-red.svg");
     }
   }
 }

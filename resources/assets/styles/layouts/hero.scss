@@ -38,6 +38,12 @@
 
   &__cell {
     @extend %overlay;
+
+    @include mediaTo(sm) {
+      &::after {
+        display: none;
+      }
+    }
   }
 
   &__nav {

@@ -42,4 +42,15 @@
     pointer-events: none;
     z-index: 1;
   }
+
+  &--bottom {
+    &::after {
+      background:
+        linear-gradient(
+          0deg,
+          rgba($dark, 1) 0%,
+          rgba($dark, 0) 70%
+        );
+    }
+  }
 }

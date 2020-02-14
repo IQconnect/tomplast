@@ -1,0 +1,152 @@
+.realizations {
+  $root: &;
+
+  display: grid;
+  grid-template-columns: 3fr 6fr;
+
+  @include mediaTo(lg) {
+    grid-template-columns: 1fr;
+  }
+
+  &__header {
+    background-color: $light;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    height: 80vh;
+
+    @include mediaTo(lg) {
+      padding: gutter(6);
+      height: auto;
+    }
+  }
+
+  &__title {
+    color: $dark;
+    text-transform: uppercase;
+  }
+
+  &__list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+
+    @include mediaTo(lg) {
+      height: 60vh;
+      min-height: gutter(30);
+    }
+
+    @include mediaTo(md) {
+      grid-template-columns: repeat(2, 1fr);
+    }
+
+    @include mediaTo(sm) {
+      display: block;
+      height: 100vh;
+    }
+  }
+
+  &__item {
+    @extend %overlay;
+    @extend %overlay--bottom;
+
+    position: relative;
+    overflow: hidden;
+    height: 100%;
+
+    @include mediaTo(md) {
+      &:last-child {
+        display: none;
+      }
+    }
+
+    @include mediaTo(sm) {
+      width: 100vw;
+
+      &:last-child {
+        display: block;
+      }
+    }
+
+    &:hover {
+      #{$root}__content {
+        transform: translateY(0);
+      }
+
+      #{$root}__text,
+      #{$root}__button {
+        opacity: 1;
+      }
+    }
+  }
+
+  &__img {
+    @extend %absolute;
+    @extend %image;
+  }
+
+  &__content {
+    @extend %absolute;
+
+    top: unset;
+    display: flex;
+    justify-content: flex-end;
+    flex-direction: column;
+    z-index: 10;
+    padding: gutter(3);
+    color: $light;
+    transform: translateY(calc(100% - #{gutter(20)}));
+    transition: $transition ease-out;
+
+    @include mediaTo(sm) {
+      transform: translateY(0);
+    }
+
+    &::after {
+      z-index: -1;
+    }
+  }
+
+  &__count {
+    @extend %normalize;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: gutter(4.5);
+    height: gutter(4.5);
+    border-radius: 100%;
+    border: gutter(0.2) solid;
+    font-weight: 400;
+    margin-bottom: gutter(3);
+  }
+
+  &__name {
+    @extend %special;
+
+    font-weight: 400;
+    margin-bottom: gutter(3);
+    text-transform: uppercase;
+  }
+
+  &__text,
+  &__button {
+    opacity: 0;
+    transition: $transition ease-out;
+
+    @include mediaTo(sm) {
+      opacity: 1;
+    }
+  }
+
+  .flickity-page-dots {
+    bottom: gutter(1);
+  }
+
+  .flickity-viewport {
+    max-height: 100vh;
+  }
+}

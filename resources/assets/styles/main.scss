@@ -1,12 +1,14 @@
+@import "common/variables";
+
 /** Vendors */
 @import "../../../node_modules/tooltipster/dist/css/tooltipster.bundle.min.css";
 @import "vendors/scss-lock/css-lock";
 @import "vendors/fonts";
+@import "vendors/flickity";
 @import "~aos/src/sass/aos.scss";
 
 /** Common */
 
-@import "common/variables";
 @import "common/mixins";
 @import "common/functions";
 @import "common/extends";
@@ -32,6 +34,7 @@
 @import "components/container";
 @import "components/text";
 @import "components/button";
+@import "components/section";
 
 /** Blocks */
 @import "blocks/hamburger";
@@ -41,5 +44,7 @@
 /** Layouts */
 @import "layouts/header";
 @import "layouts/hero";
+@import "layouts/tabs";
+@import "layouts/realizations";
 
 /** Pages */

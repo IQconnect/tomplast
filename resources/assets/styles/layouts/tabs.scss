@@ -1,0 +1,163 @@
+.tabs {
+  @include mediaTo(sm) {
+    padding: 0;
+  }
+
+  .container {
+    @include mediaTo(sm) {
+      padding: 0;
+    }
+  }
+
+  &__header {
+    @include cssLock(
+      "margin-bottom",
+      360,
+      1920,
+      (gutter_num(3), gutter_num(10))
+    );
+
+    @include mediaTo(sm) {
+      display: none;
+    }
+  }
+
+  &__nav {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+  }
+
+  &__button {
+    @extend .major-text;
+    @extend %special;
+
+    background: none;
+    border: 0;
+    border-bottom: gutter(0.2) solid;
+    text-transform: uppercase;
+    padding: gutter(1.5);
+    color: $gray;
+    cursor: pointer;
+    outline: 0 !important;
+
+    &:focus {
+      opacity: 0.5;
+    }
+
+    @include mediaTo(md) {
+      font-size: 0;
+      border: 0;
+
+      &::before {
+        content: attr(data-tab-number);
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        font-size: gutter(2);
+        border: 2px solid;
+        border-radius: 100%;
+        width: gutter(4);
+        height: gutter(4);
+      }
+    }
+
+    &:hover {
+      color: $dark;
+    }
+
+    &.-is-active {
+      color: $special;
+    }
+  }
+
+  &__content-wrapper {
+    width: 100%;
+    position: relative;
+    min-height: gutter(40);
+
+    @include mediaTo(md) {
+      height: 80vh;
+    }
+
+    @include mediaTo(sm) {
+      height: auto;
+    }
+  }
+
+  &__content {
+    opacity: 0;
+    position: absolute;
+    display: grid;
+    grid-template-columns: 500px auto;
+    height: 100%;
+    gap: gutter(8);
+    transition: $transition * 2 ease-out;
+
+    @include mediaTo(md) {
+      display: flex;
+      flex-direction: column-reverse;
+      justify-content: flex-end;
+    }
+
+    @include mediaTo(sm) {
+      @include cssLock(
+        "padding",
+        360,
+        1920,
+        (gutter_num(3), gutter_num(6))
+      );
+
+      position: relative;
+      opacity: 1;
+      width: 100vw;
+      height: auto;
+    }
+
+    &.-is-active {
+      opacity: 1;
+      z-index: 1;
+    }
+  }
+
+  &__title {
+    @include cssLock(
+      "margin-bottom",
+      360,
+      1920,
+      (gutter_num(1.6), gutter_num(3.2))
+    );
+
+    text-transform: uppercase;
+    color: $dark;
+  }
+
+  &__text {
+    @include cssLock(
+      "margin-bottom",
+      360,
+      1920,
+      (gutter_num(2.4), gutter_num(3.2))
+    );
+  }
+
+  &__img {
+    @extend %image;
+
+    @include mediaTo(sm) {
+      max-height: gutter(20);
+      margin-bottom: gutter(3);
+    }
+  }
+
+  .flickity-viewport {
+    transition: height $transition ease-out;
+  }
+
+  .flickity-page-dots {
+    .dot {
+      background-color: $dark;
+    }
+  }
+}

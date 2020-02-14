@@ -5,6 +5,10 @@
   width: 100%;
   z-index: z-index(header);
 
+  @include mediaTo(sm) {
+    padding: gutter(1) 0;
+  }
+
   &__wrapper {
     position: relative;
     display: flex;

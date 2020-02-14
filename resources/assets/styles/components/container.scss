@@ -4,8 +4,9 @@
   padding-bottom: 0;
   width: gutter(144);
   max-width: 100%;
+  margin: 0 auto;
 
-  @include mediaTo(xl) {
+  @include mediaTo(lg) {
     @include cssLock("padding-left", 360, 1920, (gutter_num(3), gutter_num(6)));
     @include cssLock(
       "padding-right",

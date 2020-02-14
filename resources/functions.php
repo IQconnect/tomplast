@@ -259,43 +259,39 @@ function option($key)
 }
 
 // Our custom post type function
-function create_offert()
+function create_posts()
 {
 
     register_post_type(
-        'oferty',
+        'Produkty',
         // CPT Options
         array(
             'labels' => array(
-                'name' => __('Oferta gastronomiczna'),
-                'singular_name' => __('Oferta')
+                'name' => __('Produkty'),
+                'singular_name' => __('Produkty')
             ),
             'public' => true,
             'has_archive' => true,
-            'rewrite' => array('slug' => 'oferty'),
-            'supports' => array('title', 'thumbnail')
+            'rewrite' => array('slug' => 'Produkty'),
+            'supports' => array('title', 'thumbnail', 'gallery', 'editor', 'category'),
+            'show_in_rest' => true,
+            'menu_icon' => 'dashicons-admin-multisite',
+            'taxonomies'  => array('category'),
         )
     );
-}
-// Hooking up our function to theme setup
-add_action('init', 'create_offert');
-
-// Our custom post type function
-function create_rooms()
-{
 
     register_post_type(
-        'Pokoje',
+        'Realizacje',
         // CPT Options
         array(
             'labels' => array(
-                'name' => __('Pokoje'),
-                'singular_name' => __('Pokoje')
+                'name' => __('Realizacje'),
+                'singular_name' => __('Realizacje')
             ),
             'public' => true,
             'has_archive' => true,
-            'rewrite' => array('slug' => 'pokoje'),
-            'supports' => array('title', 'thumbnail', 'gallery', 'editor'),
+            'rewrite' => array('slug' => 'realizacje'),
+            'supports' => array('title','excerpt', 'thumbnail', 'gallery', 'editor', 'category'),
             'show_in_rest' => true,
             'menu_icon' => 'dashicons-admin-multisite',
             'taxonomies'  => array('category'),
@@ -303,7 +299,7 @@ function create_rooms()
     );
 }
 // Hooking up our function to theme setup
-add_action('init', 'create_rooms');
+add_action('init', 'create_posts');
 
 function my_acf_init()
 {
@@ -316,5 +312,14 @@ add_action('acf/init', 'my_acf_init');
 @ini_set('post_max_size', '64M');
 @ini_set('max_execution_time', '300');
 
-add_image_size('room', 400, 560, true);
-add_image_size('food', 800, 400, true);
+add_image_size('realization', 450, 750, true);
+
+/**
+ * Replace white space
+ */
+function replace_ws($str) 
+{
+    return str_replace(' ', '_', $str);
+}
+
+

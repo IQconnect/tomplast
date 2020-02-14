@@ -13,6 +13,9 @@ import './autoload/**/*';
 
 import hamburger from './components/hamburger';
 import hero from './components/hero';
+import tabs from './components/tabs';
+import TabsSlider from './components/tabs-slider';
+import realizations from './components/realizations';
 
 
 /** Populate Router instance with DOM routes */
@@ -31,6 +34,9 @@ $(document).ready(function() {
   hamburger.init();
   hero.init();
   hero.resize();
+  tabs.init();
+  TabsSlider.init();
+  realizations.init();
   console.log('resize');
   window.dispatchEvent(new Event('resize'));
 });

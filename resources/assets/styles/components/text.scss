@@ -4,7 +4,13 @@
 }
 
 %special {
-  font-family: map-get($font-family, "special"), cursive;
+  font-family: map-get($font-family, "special");
+  font-weight: 400 !important;
+  letter-spacing: gutter(0.1);
+}
+
+%normalize {
+  font-family: map-get($font-family, "main");
 }
 
 .menu-link {
@@ -30,10 +36,10 @@
   @extend %special;
   @extend %text;
 
-  @include cssLock("font-size", 360, 1920, (gutter_num(2.4), gutter_num(4.2)));
+  @include cssLock("font-size", 360, 1920, (gutter_num(3.2), gutter_num(4.2)));
 
   font-weight: 600;
-  line-height: gutter(2);
+  line-height: 1;
 }
 
 .text {
@@ -47,7 +53,7 @@
 .major-text {
   @extend %text;
 
-  @include cssLock("font-size", 360, 1920, (gutter_num(2), gutter_num(3)));
+  @include cssLock("font-size", 360, 1920, (gutter_num(2.2), gutter_num(2.4)));
 }
 
 .minor-text {
