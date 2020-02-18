@@ -1,3 +1,4 @@
+/* stylelint-disable */
 .lg-pick {
   $root: &;
 
@@ -12,8 +13,10 @@
   transition: $transition ease-in;
   display: flex;
   flex-direction: column;
+  text-transform: uppercase;
 
-  &__item {
+  &__item,
+  li {
     opacity: 0;
     height: gutter(4);
     border-top: 1px solid;
@@ -26,22 +29,34 @@
       fill: $light;
     }
 
-    &.-is-active {
+    &.-is-active,
+    &.current-lang {
       opacity: 1;
       border-top: 0;
       order: -1;
+      a {
+        &::after {
+          content: url("../images/dropdown.svg");
+          position: relative;
+          top: gutter(-0.2);
+          margin-left: gutter(0.8);
+          transition: $transition ease-in;
+        }
+      }
     }
 
     &:hover {
       background-color: $dark;
 
-      &.-is-active {
+      &.-is-active,
+      &.current-lang {
         background-color: $special;
       }
     }
   }
 
-  &__wrapper {
+  &__wrapper,
+  a {
     display: flex;
     align-items: center;
     justify-content: center;
@@ -56,17 +71,22 @@
   &:hover {
     max-height: gutter(20);
 
-    #{$root}__item {
+    #{$root}__item,
+    li {
       opacity: 1;
 
-      &.-is-active {
+      &.-is-active,
+      &.current-lang {
         height: gutter(5.2);
       }
     }
 
-    #{$root}__wrapper {
-      svg {
+    #{$root}__wrapper,
+    a {
+      svg,
+      &::after {
         transform: rotate(180deg);
+        top: gutter(0.4) !important;
       }
     }
   }

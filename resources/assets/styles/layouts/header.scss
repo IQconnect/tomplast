@@ -15,6 +15,11 @@
     justify-content: space-between;
   }
 
+  &__brand-wrapper {
+    z-index: 100;
+    position: relative;
+  }
+
   &__brand {
     margin: 0;
     padding: 0;
@@ -36,6 +41,8 @@
     display: grid;
     grid-template-columns: auto auto;
     gap: gutter(0.8);
+    position: relative;
+    z-index: 100;
   }
 
   &__nav {

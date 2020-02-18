@@ -3,6 +3,7 @@
   $mail = get_field('mail','options'); 
 
   $sm = get_field('icons');
+  $header_img = option('header_img')['id'];
 @endphp
 
 <header class="header" data-header>
@@ -18,9 +19,13 @@
         @include('blocks.hamburger')
       </div>
       <nav class="header__nav nav" data-menu>
-        @if (has_nav_menu('primary_navigation'))
-          {!! wp_nav_menu(['theme_location' => 'primary_navigation', 'menu_class' => 'menu']) !!}
-        @endif
+        {!! image($header_img, 'full', 'nav__bg') !!}
+        <div class="container">
+          @if (has_nav_menu('primary_navigation'))
+            {!! wp_nav_menu(['theme_location' => 'primary_navigation', 'menu_class' => 'menu']) !!}
+          @endif
+          @include('blocks.contact-header')
+        </div>
       </nav>
     </div>
   </div>

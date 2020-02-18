@@ -12,7 +12,9 @@ $option_page
 $option_page
     ->addTab('Main', ['label' => 'Ustawienia główne', 'placement' => 'left'])
         ->addImage('logo', ['wrapper'=>['width'=>'33%']])
+        ->addImage('header_img', ['wrapper'=>['width'=>'33%']])
     ->addTab('Kontakt', ['placement' => 'left'])
+        ->addWysiwyg('contact-header', ['label' => 'Contact w nagłówku'])
         ->addText('name', ['label' => 'Nazwa firmy'])
         ->addTextarea('address', ['label' => 'Adres firmy', 'rows' => '2', 'new_lines' => 'br'])
         ->addText('phone', ['label' => 'Telefon firmowy'])

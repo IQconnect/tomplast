@@ -1,0 +1,21 @@
+.contact-header {
+  @extend .major-text;
+  @extend %special;
+
+  line-height: gutter(4);
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: center;
+
+  p {
+    margin: gutter(2) 0;
+    color: $dark;
+
+    a {
+      &:hover {
+        color: $gray;
+      }
+    }
+  }
+}

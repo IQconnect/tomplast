@@ -1,0 +1,65 @@
+.flex {
+  &__content-wrapper {
+    width: 100%;
+    position: relative;
+  }
+
+  &__content {
+    @include cssLock("margin-bottom", 360, 1920, (gutter_num(3), gutter_num(6)));
+
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    height: 100%;
+    gap: gutter(8);
+    transition: $transition * 2 ease-out;
+
+    & > div {
+      margin: gutter(6) 0;
+    }
+
+    &--left {
+      img {
+        order: 1;
+      }
+
+      & > div {
+        order: 2;
+      }
+    }
+  }
+
+  &__title {
+    @include cssLock(
+      "margin-bottom",
+      360,
+      1920,
+      (gutter_num(1.6), gutter_num(3.2))
+    );
+
+    text-transform: uppercase;
+    color: $dark;
+  }
+
+  &__text {
+    @include cssLock(
+      "margin-bottom",
+      360,
+      1920,
+      (gutter_num(2.4), gutter_num(3.2))
+    );
+  }
+
+  &__img {
+    @extend %image;
+  }
+
+  .flickity-viewport {
+    transition: height $transition ease-out;
+  }
+
+  .flickity-page-dots {
+    .dot {
+      background-color: $dark;
+    }
+  }
+}
