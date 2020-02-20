@@ -1,0 +1,119 @@
+.footer {
+  &__wrapper {
+    &:first-child {
+      @include cssLock(
+        "padding-top",
+        360,
+        1920,
+        (gutter_num(5), gutter_num(10))
+      );
+      @include cssLock(
+        "padding-bottom",
+        360,
+        1920,
+        (gutter_num(5), gutter_num(10))
+      );
+
+      background-color: $special-dark;
+    }
+
+    &:last-child {
+      padding: gutter(2) 0;
+      background-color: darken($special-dark, 10%);
+    }
+  }
+
+  &__row {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: gutter(3);
+    margin-bottom: gutter(3.2);
+
+    @include mediaTo(md) {
+      grid-template-columns: repeat(1, 1fr);
+      text-align: center;
+    }
+
+    &--copyright {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 0;
+
+      @include mediaTo(md) {
+        flex-direction: column;
+      }
+    }
+  }
+
+  &__title {
+    font-weight: 700;
+    color: $light;
+    text-transform: uppercase;
+    letter-spacing: gutter(0.4);
+    margin-bottom: gutter(3.2);
+  }
+
+  p,
+  li {
+    @extend .small-title;
+
+    font-weight: 700;
+    color: $gray;
+    letter-spacing: gutter(0.3);
+    line-height: gutter(3.2);
+    margin-bottom: gutter(3.2);
+    text-transform: uppercase;
+
+    a:hover {
+      color: $light;
+    }
+  }
+
+  li {
+    margin-bottom: 0;
+  }
+
+  ul {
+    margin: gutter(5) 0 0;
+    list-style: none;
+    padding: 0;
+
+    @include mediaTo(md) {
+      margin-top: 0;
+    }
+  }
+
+  &__list {
+    margin: gutter(5) gutter(-0.4) 0;
+    display: flex;
+    justify-content: flex-start;
+    flex-wrap: wrap;
+
+    @include mediaTo(md) {
+      margin: 0 auto !important;
+      justify-content: center;
+      max-width: gutter(60);
+    }
+  }
+
+  &__item {
+    padding: gutter(0.4);
+  }
+
+  &__logo {
+    margin-bottom: gutter(1);
+  }
+
+  &__copyright {
+    margin-bottom: 0 !important;
+  }
+
+  &__by {
+    margin-bottom: 0;
+
+    @include mediaTo(md) {
+      margin-top: gutter(3);
+    }
+  }
+}

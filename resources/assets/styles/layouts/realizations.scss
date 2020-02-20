@@ -56,6 +56,7 @@
     position: relative;
     overflow: hidden;
     height: 100%;
+    background-color: black;
 
     @include mediaTo(md) {
       &:last-child {
@@ -80,12 +81,18 @@
       #{$root}__button {
         opacity: 1;
       }
+
+      #{$root}__img {
+        opacity: 0.6;
+      }
     }
   }
 
   &__img {
     @extend %absolute;
     @extend %image;
+
+    transition: $transition ease-out;
   }
 
   &__content {

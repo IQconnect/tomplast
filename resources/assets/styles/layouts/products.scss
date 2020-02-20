@@ -1,0 +1,40 @@
+.products {
+  &__wrapper {
+    display: grid;
+    grid-template-columns: 4fr 8fr;
+  }
+
+  &__list {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    padding: 0;
+    margin: 0;
+    list-style: none;
+  }
+
+  &__elem {
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    padding: gutter(2) gutter(3);
+    box-shadow: 0 gutter(0.6) gutter(1.2) rgba($dark, 0.1);
+    transition: $transition ease-out;
+    top: 0;
+
+    &:hover {
+      background-color: rgba($gray, 0.2);
+      box-shadow: 0 gutter(0.8) gutter(1) rgba($dark, 0.3);
+      top: gutter(-1);
+    }
+  }
+
+  &__img {
+    @extend %image;
+
+    margin-bottom: gutter(1.6);
+  }
+
+  &__title {
+    @extend %special;
+  }
+}

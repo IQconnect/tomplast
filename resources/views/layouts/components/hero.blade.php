@@ -5,7 +5,7 @@
 {{-- @dump($hero) --}}
 
 @if($hero)
-<section class="hero">
+<section class="hero" data-0="height:100vh" data-500="height:60vh" >
     @foreach ($hero as $item)
     @php
         $img = $item['img']['ID'];
@@ -16,7 +16,7 @@
     <div class="hero__cell">
         {!! image($img, 'full', 'hero__image') !!}
         <div class="hero__wrapper container">
-            <div class="hero__content">
+            <div class="hero__content"  data-0="opacity: 1;" data-300="opacity: 0;">
                 @if ($title)
                 <h2 class="hero__title title">
                     {!! $title !!}

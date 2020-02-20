@@ -14,7 +14,8 @@ const Hero = {
         this.btn = document.querySelectorAll(BUTTON);
         this.class = CLASS;
         this.sliders = [];
-        if (this.elem) {
+        console.log('this.elem', this.elem.length);
+        if (this.elem.length) {
             this.createSlider();
             this.resize();
             this.detectChange();

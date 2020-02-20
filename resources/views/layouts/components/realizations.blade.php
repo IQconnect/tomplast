@@ -31,9 +31,9 @@
                     <p class="realizations__text text">
                         {{ $excerpt }}
                     </p>
-                    <span class="realizations__button button button--transparent button--red">
+                    {{-- <span class="realizations__button button button--transparent button--red">
                         {{ 'Zobacz Realizacje' }}
-                    </span>
+                    </span> --}}
                 </div>
             </a>
         </li>

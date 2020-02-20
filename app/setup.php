@@ -49,7 +49,11 @@ add_action('after_setup_theme', function () {
     ]);
 
     register_nav_menus([
-        'footer_navigation' => __('Footer Navigation', 'sage')
+        'footer_one' => __('Footer One', 'sage')
+    ]);
+
+    register_nav_menus([
+        'footer_two' => __('Footer Two', 'sage')
     ]);
 
     /**

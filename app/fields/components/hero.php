@@ -16,3 +16,4 @@ $hero
             ->addLink('link', ['label'=>'Link']);
 
 return $hero;
+return $hero;

@@ -272,7 +272,7 @@ function create_posts()
             ),
             'public' => true,
             'has_archive' => true,
-            'rewrite' => array('slug' => 'Produkty'),
+            'rewrite' => array('slug' => 'produkty'),
             'supports' => array('title', 'thumbnail', 'gallery', 'editor', 'category'),
             'show_in_rest' => true,
             'menu_icon' => 'dashicons-admin-multisite',
@@ -323,3 +323,9 @@ function replace_ws($str)
 }
 
 
+add_action('init', function() {
+    pll_register_string('kontakt', 'kontakt');
+    pll_register_string('siedziba', 'siedziba');
+    pll_register_string('odział', 'odział');
+    pll_register_string('zaklad', 'zaklad');
+});

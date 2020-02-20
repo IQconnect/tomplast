@@ -3,6 +3,7 @@
 
   height: 100vh;
   width: 100vw;
+  overflow: hidden;
 
   &__image {
     width: 100vw;
@@ -24,6 +25,7 @@
     max-width: gutter(62);
     position: relative;
     z-index: 10;
+    transform-origin: left top;
   }
 
   &__title {
@@ -107,7 +109,7 @@
     &:first-child {
       #{$root}__btn {
         padding-left: gutter(6.4);
-        clip-path: polygon(30% 0%, 100% 0, 100% 100%, 0% 100%);
+        clip-path: polygon(20% 0%, 100% 0, 100% 100%, 0% 100%);
       }
     }
   }

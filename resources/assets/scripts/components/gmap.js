@@ -34,10 +34,10 @@ const Gmap = {
                     center: {
                         // lat: pins[0]['pin']['lat'],
                         // lng: pins[0]['pin']['lng'],
-                        lat: 52.2259526,
-                        lng: 21.0123483,
+                        lat:52.3358379,
+                        lng: 18.8921266,
                     },
-                    zoom: 14.5,
+                    zoom: 7,
                     keyboardShortcuts: false,
                     styles: mapStyle,
                 });
@@ -46,12 +46,12 @@ const Gmap = {
             else {
                 map = new googleMaps.Map(elem, {
                     center: {
-                        lat: pins[0]['pin']['lat'],
-                        lng: pins[0]['pin']['lng'],
-                        // lat: 52.2259526,
-                        // lng: 21.0123483,
+                        // lat: pins[0]['pin']['lat'],
+                        // lng: pins[0]['pin']['lng'],
+                        lat:51.9358379,
+                        lng: 16.8921266,
                     },
-                    zoom: 12.5,
+                    zoom: 7,
                     keyboardShortcuts: false,
                     styles: mapStyle,
                 });
@@ -59,7 +59,7 @@ const Gmap = {
 
             pins.forEach(element => {
                 const infoWindow = new google.maps.InfoWindow({
-                    content: `<div class="google-map__tooltip">${element.content}</div>`
+                    content: `<div class="map__tooltip">${element.content}</div>`
                 });
 
                 const image = element.icon;

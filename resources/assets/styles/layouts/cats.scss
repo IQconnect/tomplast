@@ -1,0 +1,52 @@
+.cats {
+  $root: &;
+
+  &__list {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: gutter(10) gutter(1.6);
+    padding: 0;
+    margin: 0;
+    list-style: none;
+  }
+
+  &__elem {
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    padding: gutter(5) gutter(3);
+    box-shadow: 0 gutter(0.6) gutter(1.2) rgba($dark, 0.1);
+    transition: $transition ease-out;
+    top: 0;
+
+    &:hover {
+      background-color: rgba($gray, 0.2);
+      box-shadow: 0 gutter(0.8) gutter(1) rgba($dark, 0.3);
+      top: gutter(-1);
+
+      #{$root}__button {
+        padding-left: gutter(3.8);
+        padding-right: gutter(2.6);
+
+        &::before {
+          opacity: 1;
+          left: gutter(0.8);
+        }
+      }
+    }
+  }
+
+  &__title {
+    position: relative;
+    z-index: 10;
+  }
+
+  &__img {
+    @extend %absolute;
+
+    height: 100%;
+    left: unset;
+    object-fit: contain;
+    object-position: right;
+  }
+}

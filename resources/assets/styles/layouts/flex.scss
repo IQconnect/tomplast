@@ -13,8 +13,17 @@
     gap: gutter(8);
     transition: $transition * 2 ease-out;
 
+    @include mediaTo(md) {
+      grid-template-columns: 1fr;
+      gap: 0;
+    }
+
     & > div {
       margin: gutter(6) 0;
+
+      @include mediaTo(md) {
+        margin: gutter(3) 0;
+      }
     }
 
     &--left {
@@ -51,6 +60,11 @@
 
   &__img {
     @extend %image;
+
+    @include mediaTo(md) {
+      order: 1;
+      height: auto;
+    }
   }
 
   .flickity-viewport {

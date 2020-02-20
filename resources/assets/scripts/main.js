@@ -1,5 +1,6 @@
 // import external dependencies
 import 'jquery';
+import skrollr from 'skrollr';
 
 // Import everything from autoload
 import './autoload/**/*';
@@ -16,7 +17,7 @@ import hero from './components/hero';
 import tabs from './components/tabs';
 import TabsSlider from './components/tabs-slider';
 import realizations from './components/realizations';
-
+import gmap from './components/gmap';
 
 /** Populate Router instance with DOM routes */
 // const routes = new Router({
@@ -29,7 +30,7 @@ import realizations from './components/realizations';
 // });
 
 // Load Events
-$(document).ready(function() {
+$(document).ready(function () {
   console.log('READY');
   hamburger.init();
   hero.init();
@@ -38,5 +39,11 @@ $(document).ready(function() {
   TabsSlider.init();
   realizations.init();
   console.log('resize');
+  gmap.init();
   window.dispatchEvent(new Event('resize'));
+  skrollr.init();
+
+  // window.addEventListener('scroll', () => {
+  //   skrollr.init();
+  // });
 });

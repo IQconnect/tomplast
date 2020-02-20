@@ -2,8 +2,7 @@
   position: relative;
   padding-top: 0;
   padding-bottom: 0;
-  width: gutter(144);
-  max-width: 100%;
+  max-width: gutter(138);
   margin: 0 auto;
 
   @include mediaTo(xl) {

@@ -1,0 +1,26 @@
+.map {
+  height: 60vh;
+  min-height: gutter(36);
+
+  &__tooltip {
+    strong {
+      @extend .small-title;
+
+      text-transform: uppercase;
+      font-weight: 700;
+      color: $special;
+      display: block;
+    }
+
+    p {
+      @extend .small-title;
+
+      line-height: gutter(2);
+      margin-bottom: gutter(2);
+
+      &:last-child {
+        margin-bottom: 0;
+      }
+    }
+  }
+}
