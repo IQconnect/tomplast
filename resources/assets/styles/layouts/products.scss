@@ -1,25 +1,45 @@
 .products {
+  min-height: 100vh;
+
   &__wrapper {
     display: grid;
-    grid-template-columns: 4fr 8fr;
+    grid-template-columns: 3fr 9fr;
+    gap: gutter(6);
+
+    @include mediaTo(sm) {
+      grid-template-columns: 1fr;
+    }
   }
 
   &__list {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
+    gap: gutter(3);
     padding: 0;
     margin: 0;
     list-style: none;
+    transition: $transition;
+
+    @include mediaTo(sm) {
+      grid-template-columns: 1fr;
+    }
+
+    &.-is-active {
+      opacity: 0;
+    }
   }
 
   &__elem {
+    position: relative;
     display: flex;
     flex-direction: column;
-    position: relative;
+    background-color: $light;
     padding: gutter(2) gutter(3);
     box-shadow: 0 gutter(0.6) gutter(1.2) rgba($dark, 0.1);
     transition: $transition ease-out;
     top: 0;
+    outline-offset: 0 !important;
+    animation: show $transition ease-out both;
 
     &:hover {
       background-color: rgba($gray, 0.2);
@@ -36,5 +56,19 @@
 
   &__title {
     @extend %special;
+  }
+
+  &__text {
+    color: $gray;
+  }
+}
+
+@keyframes show {
+  from {
+    opacity: 0;
+  }
+
+  to {
+    opacity: 1;
   }
 }

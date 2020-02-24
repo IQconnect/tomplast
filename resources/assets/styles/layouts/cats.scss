@@ -8,6 +8,75 @@
     padding: 0;
     margin: 0;
     list-style: none;
+
+    @include mediaTo(sm) {
+      grid-template-columns: 1fr;
+      gap: gutter(0.8);
+    }
+
+    &--nav {
+      grid-template-columns: 1fr;
+      gap: gutter(0.8);
+      position: sticky;
+      top: gutter(1);
+
+      @include mediaTo(sm) {
+        display: flex;
+        flex-direction: column;
+        height: gutter(5);
+        overflow: hidden;
+        position: sticky;
+        top: gutter(6);
+        z-index: 10;
+        background-color: $special-light;
+        transition: $transition;
+
+        #{$root}__item {
+          height: gutter(5);
+          opacity: 0;
+          transition: $transition;
+
+          &.-is-active {
+            opacity: 1;
+            order: -1;
+          }
+        }
+
+        #{$root}__elem {
+          &.-is-active {
+            opacity: 1;
+            order: -1;
+            top: 0;
+          }
+        }
+
+        #{$root}__img {
+          right: gutter(2);
+        }
+
+        &.-is-active {
+          height: calc(100vh - #{gutter(6)});
+
+          #{$root}__item {
+            opacity: 1;
+          }
+        }
+      }
+
+      #{$root}__button {
+        display: none;
+      }
+
+      #{$root}__title {
+        @extend .text;
+
+        color: $gray;
+      }
+
+      #{$root}__elem {
+        padding: gutter(1) gutter(3);
+      }
+    }
   }
 
   &__elem {
@@ -18,6 +87,20 @@
     box-shadow: 0 gutter(0.6) gutter(1.2) rgba($dark, 0.1);
     transition: $transition ease-out;
     top: 0;
+    outline-offset: 0 !important;
+
+    @include mediaTo(sm) {
+      padding: gutter(2.4) gutter(3);
+    }
+
+    &.-is-active {
+      background-color: rgba($gray, 0.4);
+
+      #{$root}__title {
+        letter-spacing: gutter(0.2);
+        color: $black;
+      }
+    }
 
     &:hover {
       background-color: rgba($gray, 0.2);
@@ -39,6 +122,11 @@
   &__title {
     position: relative;
     z-index: 10;
+    transition: $transition ease-out;
+
+    @include mediaTo(sm) {
+      @include cssLock("font-size", 360, 1920, (gutter_num(1.8), gutter_num(2)));
+    }
   }
 
   &__img {
@@ -48,5 +136,9 @@
     left: unset;
     object-fit: contain;
     object-position: right;
+
+    @include mediaTo(sm) {
+      height: 50%;
+    }
   }
 }

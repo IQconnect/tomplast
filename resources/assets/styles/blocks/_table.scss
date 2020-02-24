@@ -1,0 +1,36 @@
+.wp-block-table {
+  padding: 0;
+  margin: 0;
+
+  @include mediaTo(sm) {
+    overflow: scroll;
+    width: calc(100vw - #{gutter(6)});
+  }
+}
+
+table {
+  width: 100%;
+  border-spacing: 0;
+
+  tr {
+    background-color: darken($light, 10%);
+    color: $dark;
+
+    &:first-child {
+      background-color: $gray;
+      color: $light;
+    }
+
+    &:nth-child(2n) {
+      background-color: $light;
+    }
+  }
+
+  td {
+    font-size: gutter(1.2);
+    padding: gutter(0.8);
+    text-transform: uppercase;
+    border: 0;
+    white-space: nowrap;
+  }
+}

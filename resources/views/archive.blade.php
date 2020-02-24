@@ -6,10 +6,10 @@
     $current = get_queried_object();
     
     if ($current->name == 'produkty') {
-      $products = get_categories();
+      $cats = get_categories();
       $hero = option('produkty');
     } else {
-      
+      $cats = get_categories();
       $products = get_posts( array(
         'post_type' => 'produkty',
         'category' => $current -> term_id,
@@ -29,12 +29,12 @@
   @include('layouts.components.small-hero', ['data'=>$hero])
 
   @if ($current->name == 'produkty')
-    @include('layouts.components.cats', ['data'=>$products])
+    @include('layouts.components.cats', ['data'=>$cats])
   @else
-    @include('layouts.components.products', ['data'=>$products])
+    @include('layouts.components.products', ['data'=>$products, 'cats'=>$cats ])
   @endif
 
-  @dump($products)
-  @dump($current -> term_id)
+  {{-- @dump($products)
+  @dump($current -> term_id) --}}
 
 @endsection

@@ -33,6 +33,10 @@ $option_page
     ->addTab('Produkty', ['placement' => 'left'])
         ->addGroup('produkty')
             ->addFields(get_field_partial('components.small-hero'))
+        ->endGroup()
+    ->addTab('Realizacje', ['placement' => 'left'])
+        ->addGroup('realizacje')
+            ->addFields(get_field_partial('components.small-hero'))
         ->endGroup();
     ;
         

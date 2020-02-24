@@ -1,0 +1,43 @@
+.gallery {
+  $root: &;
+
+  &__list {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: gutter(3);
+    list-style: none;
+    margin: 0;
+    padding: 0;
+
+    @include mediaTo(sm) {
+      grid-template-columns: repeat(1, 1fr);
+    }
+  }
+
+  &__elem {
+    display: block;
+    position: relative;
+    top: 0;
+    padding-top: 60%;
+    transition: $transition ease-out;
+    overflow: hidden;
+    box-shadow: 0 gutter(0.6) gutter(1.2) rgba($dark, 0.1);
+
+    &:hover {
+      box-shadow: 0 gutter(0.8) gutter(1) rgba($dark, 0.3);
+      top: gutter(-1);
+
+      #{$root}__img {
+        width: 100%;
+        object-position: center;
+      }
+    }
+  }
+
+  &__img {
+    @extend %image;
+    @extend %absolute;
+
+    transition: $transition ease-out;
+  }
+}

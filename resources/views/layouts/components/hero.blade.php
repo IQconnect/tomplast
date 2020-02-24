@@ -5,7 +5,7 @@
 {{-- @dump($hero) --}}
 
 @if($hero)
-<section class="hero" data-0="height:100vh" data-500="height:60vh" >
+<section class="hero">
     @foreach ($hero as $item)
     @php
         $img = $item['img']['ID'];

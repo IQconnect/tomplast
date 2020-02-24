@@ -273,7 +273,7 @@ function create_posts()
             'public' => true,
             'has_archive' => true,
             'rewrite' => array('slug' => 'produkty'),
-            'supports' => array('title', 'thumbnail', 'gallery', 'editor', 'category'),
+            'supports' => array('title', 'thumbnail', 'excerpt', 'gallery', 'editor', 'category'),
             'show_in_rest' => true,
             'menu_icon' => 'dashicons-admin-multisite',
             'taxonomies'  => array('category'),

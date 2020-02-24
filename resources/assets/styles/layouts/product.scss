@@ -1,0 +1,101 @@
+.product {
+  &__content-wrapper {
+    width: 100%;
+    position: relative;
+  }
+
+  &__content {
+    @include cssLock(
+      "margin-bottom",
+      360,
+      1920,
+      (gutter_num(3), gutter_num(6))
+    );
+
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    height: 100%;
+    gap: gutter(8);
+    transition: $transition * 2 ease-out;
+
+    @include mediaTo(md) {
+      grid-template-columns: 1fr;
+      gap: 0;
+    }
+
+    & > div {
+      margin: gutter(6) 0;
+
+      @include mediaTo(md) {
+        margin: gutter(3) 0;
+      }
+    }
+
+    &--left {
+      img {
+        order: 1;
+      }
+
+      & > div {
+        order: 2;
+      }
+    }
+  }
+
+  &__title {
+    @include cssLock(
+      "margin-bottom",
+      360,
+      1920,
+      (gutter_num(1.6), gutter_num(3.2))
+    );
+
+    @extend .text;
+
+    text-transform: uppercase;
+    color: $gray;
+
+    &::first-line {
+      @extend .subtitle;
+
+      line-height: gutter(8);
+      color: $dark;
+    }
+  }
+
+  &__text {
+    @include cssLock(
+      "margin-bottom",
+      360,
+      1920,
+      (gutter_num(2.4), gutter_num(3.2))
+    );
+  }
+
+  &__img {
+    @extend %image;
+
+    object-fit: contain;
+    height: auto;
+
+    @include mediaTo(md) {
+      order: 1;
+      height: auto;
+    }
+  }
+
+  &__cnt {
+    width: 100%;
+    margin-top: gutter(4.2);
+  }
+
+  .flickity-viewport {
+    transition: height $transition ease-out;
+  }
+
+  .flickity-page-dots {
+    .dot {
+      background-color: $dark;
+    }
+  }
+}
