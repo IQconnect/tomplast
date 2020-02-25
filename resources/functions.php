@@ -328,4 +328,5 @@ add_action('init', function() {
     pll_register_string('siedziba', 'siedziba');
     pll_register_string('odział', 'odział');
     pll_register_string('zaklad', 'zaklad');
+    pll_register_string('info', 'info');
 });

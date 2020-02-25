@@ -1,0 +1,165 @@
+.contact {
+  &__wrapper {
+    display: grid;
+    grid-template-columns: 7fr 1fr 4fr;
+    gap: gutter(3);
+
+    @include mediaTo(sm) {
+      grid-template-columns: 1fr;
+    }
+  }
+
+  form {
+    & > p {
+      display: grid;
+      gap: gutter(2.4);
+      grid-template-columns: 1fr 1fr;
+
+      @include mediaTo(sm) {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    br {
+      display: none;
+    }
+
+    span {
+      width: 100%;
+      display: block;
+    }
+
+    input,
+    textarea {
+      @extend .text;
+
+      width: 100%;
+      padding: gutter(2) gutter(3);
+      border: 0;
+      background-color: $light;
+      box-shadow: 0 gutter(0.6) gutter(1.2) rgba($dark, 0.1);
+      outline-color: $special;
+    }
+
+    textarea {
+      height: gutter(20);
+    }
+
+    .your-email,
+    .your-message {
+      grid-column: span 2;
+
+      @include mediaTo(sm) {
+        grid-column: auto;
+      }
+    }
+
+    .wpcf7-not-valid-tip {
+      @extend .small-title;
+
+      padding: gutter(1) 0;
+    }
+
+    button {
+      @extend .button;
+      @extend .button--red;
+
+      transform: none !important;
+
+      @include mediaTo(sm) {
+        width: 100%;
+      }
+    }
+
+    label {
+      @extend .minor-text;
+
+      padding: gutter(1) 0;
+      padding-left: gutter(3);
+      line-height: gutter(2.4);
+      user-select: none;
+    }
+
+    .form__checkbox-wrapper {
+      margin-bottom: gutter(2.4);
+      position: relative;
+    }
+
+    .form__checkbox {
+      position: absolute;
+      left: 0;
+      opacity: 0;
+
+      &:checked + div {
+        &::after {
+          background-color: $special;
+        }
+      }
+    }
+
+    .form__checkbox-elem {
+      left: 0;
+      top: gutter(0.3);
+      position: absolute;
+      display: block;
+      width: gutter(2);
+      height: gutter(2);
+      border: gutter(0.1) solid $gray;
+      background-color: $light;
+      pointer-events: none;
+
+      &::after {
+        @extend %absolute;
+
+        content: "";
+        background-color: $light;
+        width: 40%;
+        height: 40%;
+      }
+    }
+
+    .wpcf7-response-output {
+      @extend .small-title;
+
+      padding: gutter(1) 0;
+    }
+  }
+
+  &__info {
+    display: block;
+    background-color: $special;
+    padding: gutter(3) gutter(3);
+    grid-column-start: 3;
+    box-shadow: 0 gutter(0.6) gutter(1.2) rgba($dark, 0.6);
+
+    @include mediaTo(sm) {
+      grid-column-start: auto;
+    }
+  }
+
+  &__title {
+    @extend %special;
+
+    color: $light;
+    text-transform: uppercase;
+  }
+
+  &__content {
+    @extend .text;
+
+    color: $light;
+
+    a {
+      &:hover {
+        opacity: 0.6;
+      }
+    }
+  }
+
+  h4 {
+    @extend .major-text;
+
+    margin-top: gutter(2.4);
+    font-weight: 800;
+  }
+}

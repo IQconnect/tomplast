@@ -16,8 +16,10 @@ const Cats = {
         this.url = this.getPath(window.location.href);
         this.class = CLASS;
 
-        this.setClass();
-        this.addEvents();
+        if(this.elem.length) {
+            this.setClass();
+            this.addEvents();
+        }
     },
 
     addEvents() {

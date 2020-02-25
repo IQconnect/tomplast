@@ -18,6 +18,7 @@ import TabsSlider from './components/tabs-slider';
 import realizations from './components/realizations';
 import gmap from './components/gmap';
 import cats from './components/cats';
+import checkbox from './components/checkbox';
 
 /** Populate Router instance with DOM routes */
 // const routes = new Router({
@@ -41,6 +42,7 @@ $(document).ready(function () {
   console.log('resize');
   gmap.init();
   cats.init();
+  checkbox.init();
   window.dispatchEvent(new Event('resize'));
 
   // window.addEventListener('scroll', () => {
