@@ -8,13 +8,20 @@
 <section class="hero">
     @foreach ($hero as $item)
     @php
-        $img = $item['img']['ID'];
+        $img = $item['img'];
         $title = $item['content']['title'];
         $text = $item['content']['text'];
         $link = $item['content']['link'];
+        $movie = $item['movie'];
     @endphp
     <div class="hero__cell">
-        {!! image($img, 'full', 'hero__image') !!}
+        @if ($movie)
+        <video class="hero__image" playsinline="" autoplay="" muted="" loop="" poster="{{ $image['url'] }}">
+            <source src="{{ $movie['url'] }}" type="video/mp4">
+        </video>
+        @else
+        {!! image($img['ID'], 'full', 'hero__image') !!}
+        @endif
         <div class="hero__wrapper container">
             <div class="hero__content"  data-0="opacity: 1;" data-300="opacity: 0;">
                 @if ($title)

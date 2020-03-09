@@ -329,4 +329,9 @@ add_action('init', function() {
     pll_register_string('odział', 'odział');
     pll_register_string('zaklad', 'zaklad');
     pll_register_string('info', 'info');
+    pll_register_string('firma-czynna', 'firma-czynna');
+    pll_register_string('firma-open', 'firma-open');
+    pll_register_string('firma-close', 'firma-close');
+    //Firma czynna od poniedziałku do piątku w godzinach 8-16<br>Aktualnie:
+    // Firma otwarta jeszcze przez
 });

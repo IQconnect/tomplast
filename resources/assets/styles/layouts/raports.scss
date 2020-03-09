@@ -1,0 +1,60 @@
+.raports {
+  padding: ($gutter * 1.3) 0;
+
+  .wp-block-column {
+    width: 100%;
+    display: grid;
+    grid-template-columns: 1fr;
+    flex-basis: 100%;
+    grid-gap: $gutter * 3;
+    margin: 0;
+
+    @include media("md") {
+      grid-template-columns: repeat(2, 1fr);
+    }
+  }
+
+  .wp-block-group__inner-container {
+    display: grid;
+    margin: 0;
+    grid-template-columns: 1fr;
+    gap: gutter(3);
+
+    @include media("md") {
+      grid-template-columns: repeat(2, 1fr);
+    }
+  }
+
+  .wp-block-file {
+    margin: 0;
+
+    a {
+      @extend .text;
+
+      padding: $gutter * 3;
+      background-color: $special-light;
+      font-weight: 700 !important;
+      display: flex;
+      align-items: flex-start;
+      border-radius: $gutter;
+      text-decoration: none !important;
+      color: $special !important;
+      outline-offset: 0 !important;
+
+      &::before {
+        content: url("../images/files.svg");
+        margin-right: $gutter * 3;
+        transition: $transition;
+      }
+
+      &:hover {
+        background-color: $special;
+        color: $light !important;
+
+        &::before {
+          filter: brightness(0) invert(1);
+        }
+      }
+    }
+  }
+}

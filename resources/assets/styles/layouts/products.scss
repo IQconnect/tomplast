@@ -40,6 +40,7 @@
     top: 0;
     outline-offset: 0 !important;
     animation: show $transition ease-out both;
+    height: 100%;
 
     &:hover {
       background-color: rgba($gray, 0.2);
@@ -52,6 +53,7 @@
     @extend %image;
 
     margin-bottom: gutter(1.6);
+    height: 80%;
   }
 
   &__title {

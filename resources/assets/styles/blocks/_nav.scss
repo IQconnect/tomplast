@@ -17,6 +17,10 @@
     @include mediaTo(lg) {
       margin: 0 gutter(2);
     }
+
+    @include mediaTo(sm) {
+      grid-template-columns: 1fr;
+    }
   }
 
   &__bg {
@@ -30,6 +34,10 @@
   .contact-header {
     opacity: 0;
     transition: $transition opacity;
+
+    @include mediaTo(lg) {
+      display: none;
+    }
   }
 
   .menu {
@@ -43,6 +51,10 @@
     justify-content: center;
     height: 100vh;
     transition: $transition opacity;
+
+    @include mediaTo(sm) {
+      align-items: center;
+    }
 
     li {
       @extend .subtitle;

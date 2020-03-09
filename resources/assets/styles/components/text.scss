@@ -27,7 +27,7 @@
   @extend %special;
   @extend %text;
 
-  @include cssLock("font-size", 360, 1920, (gutter_num(4.2), gutter_num(7.7)));
+  @include cssLock("font-size", 360, 1920, (gutter_num(4.2), gutter_num(7)));
 
   line-height: 1.3;
 }

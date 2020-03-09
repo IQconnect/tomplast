@@ -1,7 +1,7 @@
 import slider from './slider'
 
 const CONFIG = {
-  ELEM: 'header',
+  ELEM: 'data-header',
   CLASS: 'header--hide',
   OFFSET: 2,
 };

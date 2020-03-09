@@ -11,6 +11,7 @@
   &__header {
     background-color: $light;
     display: flex;
+    flex-direction: column;
     justify-content: center;
     align-items: center;
     text-align: center;
@@ -25,6 +26,11 @@
   &__title {
     color: $dark;
     text-transform: uppercase;
+    margin-bottom: gutter(2);
+  }
+
+  &__btn {
+    margin: 0;
   }
 
   &__list {

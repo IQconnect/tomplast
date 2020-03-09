@@ -10,19 +10,22 @@
 
   .column-static {
     position: sticky;
-    top: 0;
+    top: gutter(6);
   }
 
   h2 {
     @extend .subtitle;
 
     margin-bottom: gutter(3.2);
+    color: $special-dark;
   }
 
   h3 {
-    @extend .major-text;
+    @extend .subtitle;
+    @extend %special;
 
     margin-bottom: gutter(3.2);
+    color: $special-dark;
   }
 
   p {

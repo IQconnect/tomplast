@@ -8,18 +8,22 @@
         <h2 class="realizations__title subtitle">
             Nasze Realizajce
         </h2>
+        <a class="realizations__btn button button--transparent button--red" href="{{ get_post_type_archive_link( 'realizacje' ) }}">
+            Zobacz wszystkie
+        </a>
     </header>
     <ul class="realizations__list">
         @foreach ($realizations as $item)
         @php
             $id = $item->ID;
-            $url = get_permalink( $id);
             $img = get_post_thumbnail_id($id );
+            $url = wp_get_attachment_image_url( $img, 'full' );
             $title = $item->post_title;
             $excerpt = $item->post_excerpt;
         @endphp
+
         <li class="realizations__item">
-            <a href="{{ $url }}">
+            <a href="{{ $url }}" data-fancybox="realizations">
                 {!! image($img, 'realization', 'realizations__img') !!}
                 <div class="realizations__content">
                     <span class="realizations__count major-text">
