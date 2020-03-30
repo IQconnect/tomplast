@@ -14,6 +14,17 @@
           <img src="{{  get_field('logo', 'options')['url'] }}" alt="Tomplast">
         </h1>
       </a>
+      <div class="header__info" data-time>
+        <p class="small-title">
+          {{ pll__('firma-czynna') }}
+          <span class="header__open">
+            {{ pll__('firma-open') }} <span data-hour>4</span> h. <span data-min>4</span> min. <span data-sec>4</span> s.
+          </span>
+          <span class="header__close">
+            {{ pll__('firma-close') }}
+          </span>
+        </p>
+      </div>
       <div class="header__extras">
         @include('blocks.lg-pick')
         @include('blocks.hamburger')

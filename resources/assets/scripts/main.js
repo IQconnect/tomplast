@@ -1,5 +1,6 @@
 // import external dependencies
 import 'jquery';
+import 'fancybox';
 
 // Import everything from autoload
 import './autoload/**/*';
@@ -18,6 +19,11 @@ import TabsSlider from './components/tabs-slider';
 import realizations from './components/realizations';
 import gmap from './components/gmap';
 import cats from './components/cats';
+import checkbox from './components/checkbox';
+import header from './components/header';
+import preloader from './components/preloader';
+import raports from './components/raports';
+import countDate from './components/count-date';
 
 /** Populate Router instance with DOM routes */
 // const routes = new Router({
@@ -41,7 +47,12 @@ $(document).ready(function () {
   console.log('resize');
   gmap.init();
   cats.init();
+  checkbox.init();
+  header.init();
   window.dispatchEvent(new Event('resize'));
+  raports.init();
+  countDate.init();
+  preloader.init();
 
   // window.addEventListener('scroll', () => {
   //   skrollr.init();

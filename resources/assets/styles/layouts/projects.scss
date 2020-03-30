@@ -46,7 +46,7 @@
     @extend %image;
     @extend %absolute;
 
-    transition: $transition ease-out;
+    transition: $transition ease-out !important;
   }
 
   &__title {

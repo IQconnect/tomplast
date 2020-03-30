@@ -16,8 +16,12 @@ const Cats = {
         this.url = this.getPath(window.location.href);
         this.class = CLASS;
 
-        this.setClass();
-        this.addEvents();
+        if(this.elem.length) {
+            this.topOffset = 300;
+            this.timeOffset = 400;
+            this.setClass();
+            this.addEvents();
+        }
     },
 
     addEvents() {
@@ -28,7 +32,12 @@ const Cats = {
 
                 this.setPath($this);
                 if(!$this.classList.contains(this.class)) {
-                    this.loadProducts();
+
+                    $('html, body').animate({ scrollTop: this.topOffset }, this.timeOffset);
+                    this.products.classList.add(this.class);
+                    setTimeout(() => {
+                        this.loadProducts();
+                    }, this.timeOffset);
                 }
                 this.setClass();
             });

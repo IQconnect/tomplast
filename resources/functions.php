@@ -303,7 +303,7 @@ add_action('init', 'create_posts');
 
 function my_acf_init()
 {
-    acf_update_setting('google_api_key', 'AIzaSyDB6amgRAZXs7H65TQeg1w61AIG8-Zn7fk');
+    acf_update_setting('google_api_key', 'AIzaSyApJWmNRy9KlH76AbS4UrkXPebJhO4Ach8');
 }
 
 add_action('acf/init', 'my_acf_init');
@@ -328,4 +328,10 @@ add_action('init', function() {
     pll_register_string('siedziba', 'siedziba');
     pll_register_string('odział', 'odział');
     pll_register_string('zaklad', 'zaklad');
+    pll_register_string('info', 'info');
+    pll_register_string('firma-czynna', 'firma-czynna');
+    pll_register_string('firma-open', 'firma-open');
+    pll_register_string('firma-close', 'firma-close');
+    //Firma czynna od poniedziałku do piątku w godzinach 8-16<br>Aktualnie:
+    // Firma otwarta jeszcze przez
 });

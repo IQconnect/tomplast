@@ -18,7 +18,12 @@
       grid-template-columns: 1fr;
       gap: gutter(0.8);
       position: sticky;
-      top: gutter(1);
+      top: gutter(10);
+      height: gutter(50);
+
+      #{$root}__item {
+        height: gutter(5);
+      }
 
       @include mediaTo(sm) {
         display: flex;

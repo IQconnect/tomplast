@@ -10,7 +10,7 @@ const preloader = {
     this.elem = document.querySelector(`[${ELEM}]`);
     this.class = CLASS;
 
-    this.hide();
+    setTimeout(()=>{this.hide()}, 300);
   },
 
   hide() {

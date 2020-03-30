@@ -1,12 +1,25 @@
 .header {
+  $root: &;
+
   padding: gutter(4) 0;
   position: fixed;
   top: 0;
   width: 100%;
   z-index: z-index(header);
+  transition: $transition ease-out;
+  max-height: gutter(8);
 
   @include mediaTo(sm) {
     padding: gutter(1) 0;
+  }
+
+  &--hide {
+    background-color: $light;
+    padding: gutter(2) 0;
+
+    #{$root}__info {
+      opacity: 1;
+    }
   }
 
   &__wrapper {
@@ -51,5 +64,44 @@
     z-index: 10;
     left: unset;
     bottom: unset;
+  }
+
+  &__info {
+    @extend %absolute;
+
+    text-align: center;
+    opacity: 0;
+    line-height: gutter(2);
+    transition: $transition;
+    padding: gutter(1) gutter(13) 0 gutter(23);
+
+    p {
+      display: flex;
+      justify-content: space-between;
+      color: $gray;
+      font-size: 14px;
+    }
+
+    @include mediaTo(sm) {
+      display: none;
+    }
+
+    &.-is-close {
+      #{$root}__open {
+        display: none;
+      }
+
+      #{$root}__close {
+        display: inline;
+      }
+    }
+  }
+
+  &__close {
+    display: none;
+  }
+
+  &__open {
+    display: inline;
   }
 }

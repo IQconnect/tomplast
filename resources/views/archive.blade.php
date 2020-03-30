@@ -4,7 +4,7 @@
 
   @php
     $current = get_queried_object();
-    
+
     if ($current->name == 'produkty') {
       $cats = get_categories();
       $hero = option('produkty');
@@ -13,6 +13,7 @@
       $products = get_posts( array(
         'post_type' => 'produkty',
         'category' => $current -> term_id,
+        'numberposts' => -1,
       ) );
 
       $img = get_field('hero', $current->taxonomy.'_'.$current->term_id);
@@ -23,7 +24,7 @@
         'content' => ['title'=>$current->name],
       ];
     }
-    
+
   @endphp
 
   @include('layouts.components.small-hero', ['data'=>$hero])

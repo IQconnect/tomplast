@@ -15,6 +15,7 @@ $option_page
         ->addImage('header_img', ['wrapper'=>['width'=>'33%']])
     ->addTab('Kontakt', ['placement' => 'left'])
         ->addWysiwyg('contact-header', ['label' => 'Contact w nagłówku', 'media_upload' => 0])
+        ->addWysiwyg('contact-contact', ['label' => 'Contact w kontakcie', 'media_upload' => 0])
     ->addTab('Mapa', ['placement' => 'left'])
         ->addRepeater('pins')
             ->addImage('icon', ['label'=>'icon'])

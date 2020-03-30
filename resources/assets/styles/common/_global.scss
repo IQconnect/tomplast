@@ -57,3 +57,21 @@ button {
     outline: rgba($special, 0.6) solid gutter(0.1);
   }
 }
+
+.preloader {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: $light;
+  width: 100%;
+  height: 100%;
+  z-index: z-index(preloader);
+  transition: $transition ease-out;
+
+  &--hide {
+    opacity: 0;
+    pointer-events: none;
+  }
+}

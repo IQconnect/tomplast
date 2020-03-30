@@ -16,6 +16,8 @@ $builder
             ->addLayout(get_field_partial('components.realizations'))
             ->addLayout(get_field_partial('components.product'))
             ->addLayout(get_field_partial('components.gallery'))
+            ->addLayout(get_field_partial('components.files'))
             ->addLayout('content')
+            ->addLayout('contact')
     ;
 return $builder;

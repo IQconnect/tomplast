@@ -1,0 +1,49 @@
+.files {
+  $root: &;
+
+  &__title {
+    text-align: center;
+    color: $special-dark;
+    margin-bottom: gutter(3.2);
+    text-transform: uppercase;
+  }
+
+  &__list {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    list-style: none;
+    margin: 0;
+
+    @include mediaTo(sm) {
+      grid-template-columns: repeat(1, 1fr);
+    }
+  }
+
+  &__item {
+    padding: gutter(3);
+  }
+
+  &__elem {
+    display: block;
+    position: relative;
+    top: 0;
+    transition: $transition ease-out;
+    overflow: hidden;
+    box-shadow: 0 gutter(0.6) gutter(1.2) rgba($dark, 0.1);
+    outline-offset: 0 !important;
+
+    &:hover {
+      box-shadow: 0 gutter(0.8) gutter(1) rgba($dark, 0.3);
+      top: gutter(-1);
+    }
+  }
+
+  &__img {
+    transition: $transition ease-out;
+  }
+
+  & + .files {
+    padding-top: 0;
+  }
+}
