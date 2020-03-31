@@ -21,4 +21,4 @@
   </div>
 </section>
 
-@include('components.dropdown')
+@include('components.team')
