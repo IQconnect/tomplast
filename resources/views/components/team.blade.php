@@ -26,9 +26,9 @@
                     E: <a
                       href="mailto:{{ replace_ws($content['mail']) }}">{{ $content['mail'] }}</a>
                   </span>
-                  @if($content['link']['url'])
+                  @if($content['card']['url'])
                     <a class="team__link"
-                      href="{{ $content['link']['url'] }}">
+                      href="{{ $content['card']['url'] }}">
                       <span class="team__icon fas fa-download"></span>
                     </a>
                   @endif

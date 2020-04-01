@@ -60,6 +60,10 @@
   @extend %text;
 
   @include cssLock("font-size", 360, 1920, (gutter_num(2.2), gutter_num(2.4)));
+
+  &--special {
+    @extend %special;
+  }
 }
 
 .minor-text {

@@ -1,0 +1,42 @@
+.breadcramps {
+  @extend %absolute;
+  @extend .text;
+  @extend .list;
+
+  top: unset;
+  display: flex;
+  justify-content: center;
+  font-weight: 900;
+  z-index: 10;
+
+  @include mediaTo(sm) {
+    display: none;
+  }
+
+  &__item {
+    padding: gutter(1) gutter(0.5);
+    text-shadow: gutter(0) gutter(0) gutter(0.5) $light;
+
+    &::before {
+      content: "/";
+      margin-right: gutter(0.7);
+      color: $special;
+    }
+
+    &:first-child {
+      &::before {
+        content: " ";
+        margin-right: gutter(0.7);
+      }
+    }
+  }
+
+  &__elem {
+    color: $special;
+    outline-offset: 0 !important;
+
+    &:hover {
+      opacity: 0.4;
+    }
+  }
+}

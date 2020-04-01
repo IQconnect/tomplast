@@ -1,0 +1,37 @@
+.s-realization {
+  &__title {
+    border-bottom: 1px solid $dark;
+    padding-bottom: gutter(1);
+    margin-bottom: gutter(3.2);
+  }
+
+  &__wrapper {
+    display: grid;
+    grid-template-columns: 2fr 1fr 1fr;
+    gap: gutter(3);
+
+    @include mediaTo(md) {
+      grid-template-columns: 1fr 1fr;
+    }
+
+    @include mediaTo(sm) {
+      grid-template-columns: 1fr;
+    }
+  }
+
+  &__col {
+    &:first-child {
+      @include mediaTo(md) {
+        grid-column: span 2;
+      }
+
+      @include mediaTo(sm) {
+        grid-column: 1;
+      }
+    }
+  }
+
+  &__gallery {
+    margin-top: gutter(10);
+  }
+}
